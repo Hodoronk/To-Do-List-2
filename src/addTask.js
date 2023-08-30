@@ -4,6 +4,12 @@ import {taskArray} from "./utility" ;
 
 let prio;
 const addTask = () => {
+    mainDivs.center.innerHTML = '';
+    taskArray.forEach((task, index) => {
+        const taskIndex = index;
+        displayTask(task.title, task.description, task.dueDate, task.priority, taskIndex) ;
+    });
+
     taskInputField()
     inputField.create.addEventListener('click', createButton);
     inputField.cancel.addEventListener ('click', cancelButton);
@@ -58,10 +64,17 @@ const createButton = () => {
     const priority = prio;
     const newTask = new Task(title, descr, due, priority);
     taskArray.push(newTask) ; //new tasks get pushed into task array here
-    displayTask(title, descr, due, priority);
+    const taskIndex = taskArray.length - 1;
+    console.log(taskArray.length);
+
+    mainDivs.center.removeChild (inputField.container) ;
+
+
+
+    displayTask(title, descr, due, priority, taskIndex);
 }
 
-const displayTask = (title, description, dueDate, priority) => {
+const displayTask = (title, description, dueDate, priority, index) => {
     const container = document.createElement('div');
     const titleP = document.createElement('p');
     const descriptionP = document.createElement('p');
@@ -71,7 +84,9 @@ const displayTask = (title, description, dueDate, priority) => {
     complete.textContent = 'Mark Complete' ;
 
     complete.addEventListener('click', () => {
-        container.innerHTML = '';
+        taskArray.splice(index, 1);
+        console.log(taskArray.length);
+        mainDivs.center.removeChild(container) ; 
     }) ;
 
 
@@ -88,15 +103,7 @@ const displayTask = (title, description, dueDate, priority) => {
     console.log(taskArray) ;
     mainDivs.center.appendChild(container);
 
-
-
-    
 }
-
-
-
-
-
 const cancelButton = () => {
     mainDivs.center.removeChild(inputField.container);
 }
@@ -110,10 +117,8 @@ const priorityCheck = (input) => {
 }
 
 
-
-
-
 export {
     addTask,
+    displayTask,
     
 }
