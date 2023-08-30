@@ -1,4 +1,5 @@
-import { projCreation, mainDivs } from "./dom";
+import { projCreation, mainDivs, projectCenterDisplay } from "./dom";
+import { addTask } from "./addTask";
 
 class Project{
     constructor(name){
@@ -22,12 +23,26 @@ const projectListener = () => {
     projCreation.plusBtn.addEventListener('click', () => {
         mainDivs.projDiv.innerHTML = '' ;
         const name = projCreation.name.value ;
+        projCreation.name.value = '' ;
         const newProject = new Project (name) ;
         const projectButton = document.createElement('button') ;
         projectButton.textContent = name;
         mainDivs.leftDiv.appendChild (projectButton) ;
+
+
+        // Will possibly need to move this elsewhere: 
+        projectButton.addEventListener('click', () =>{
+            selectProj(name) ;
+        })
     }) ;
 
+    const selectProj = (name) => {
+        mainDivs.center.innerHTML = '';
+        projectCenterDisplay.h1.textContent = name
+        mainDivs.center.appendChild(projectCenterDisplay.h1);
+        addTask();
+
+    }
 
 
 

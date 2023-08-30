@@ -5,11 +5,14 @@ const mainButtons = {
     week: btnMaker ('This Week') ,
     today: btnMaker ('Today') ,
     addTask: btnMaker ('Add Task') ,
+    projects: paraMaker ('Projects') , //Not btn, but fits.
+    newProj: btnMaker ('+ Project'),
 }
 
 const mainDivs = {
     leftDiv: divMaker(),
     center: divMaker(),
+    projDiv: divMaker(),
 }
 
 const inputField = {
@@ -43,6 +46,16 @@ const taskElements = {
     cancel: btnMaker ('Cancel') ,
 }
 
+const projCreation = {
+    namePara: paraMaker('Name your project: ') ,
+    name : inputMaker('text') ,
+    plusBtn: btnMaker('+') ,
+    projCancel: btnMaker ('Cancel') ,
+}
+
+const projectCenterDisplay = {
+    h1 : document.createElement('h1'),
+}
 
 
 
@@ -51,5 +64,7 @@ export{
     mainDivs,
     inputField,
     taskElements,
+    projCreation,
+    projectCenterDisplay,
 }
 

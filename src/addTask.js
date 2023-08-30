@@ -5,7 +5,7 @@ import {taskArray} from "./utility" ;
 let prio;
 const addTask = () => {
     mainDivs.center.innerHTML = '';
-    taskArray.forEach((task, index) => {
+    forEach((task, index) => {
         const taskIndex = index;
         displayTask(task.title, task.description, task.dueDate, task.priority, taskIndex) ;
     });
@@ -13,6 +13,14 @@ const addTask = () => {
     taskInputField()
     inputField.create.addEventListener('click', createButton);
     inputField.cancel.addEventListener ('click', cancelButton);
+
+    inputField.titleInput.value = '';
+    inputField.descrInput.value = '';
+    inputField.dueInput.value = '';
+    inputField.highP.checked = false;
+    inputField.medP.checked = false;
+    inputField.lowP.checked = false;
+
 }
 
 const taskInputField = () => {
