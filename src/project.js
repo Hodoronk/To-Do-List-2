@@ -1,54 +1,35 @@
-import { projCreation, mainDivs, projectCenterDisplay } from "./dom";
 import { addTask } from "./addTask";
+import { mainButtons, mainDivs, projCreation, projectCreation, projectCenterDisplay } from "./dom"
 
 class Project{
     constructor(name){
-        this.name = name ; 
+        this.name = name ;
+        this.array = [] ;
     }
 }
 
+
+
+
+
 const projectListener = () => {
-    mainDivs.center.innerHTML = '' ;
-    mainDivs.projDiv.appendChild (projCreation.namePara ) ;
-    mainDivs.projDiv.appendChild (projCreation.name ) ;
-    mainDivs.projDiv.appendChild (projCreation.plusBtn ) ;
-    mainDivs.projDiv.appendChild (projCreation.projCancel ) ;
-    mainDivs.leftDiv.appendChild ( mainDivs.projDiv ) ;
-    }
+    projCreation.creationDiv.appendChild ( projCreation.namePara ) ;
+    projCreation.creationDiv.appendChild ( projCreation.name ) ;
+    projCreation.creationDiv.appendChild ( projCreation.plusBtn ) ;
+    projCreation.creationDiv.appendChild ( projCreation.projCancel ) ;
+    mainDivs.leftDiv.appendChild ( projCreation.creationDiv ) ;
 
-    projCreation.projCancel.addEventListener('click', () => {
-        mainDivs.projDiv.innerHTML = '' ;
-    }) ;
+    projCreation.projCancel.addEventListener( 'click', fieldRemove ) ;
+    // projCreation.plusBtn.addEventListener ( 'click', create ) ;
+}
 
-    projCreation.plusBtn.addEventListener('click', () => {
-        mainDivs.projDiv.innerHTML = '' ;
-        const name = projCreation.name.value ;
-        projCreation.name.value = '' ;
-        const newProject = new Project (name) ;
-        const projectButton = document.createElement('button') ;
-        projectButton.textContent = name;
-        mainDivs.leftDiv.appendChild (projectButton) ;
-
-
-        // Will possibly need to move this elsewhere: 
-        projectButton.addEventListener('click', () =>{
-            selectProj(name) ;
-        })
-    }) ;
-
-    const selectProj = (name) => {
-        mainDivs.center.innerHTML = '';
-        projectCenterDisplay.h1.textContent = name
-        mainDivs.center.appendChild(projectCenterDisplay.h1);
-        addTask();
-
-    }
+const fieldRemove = () => {
+    projCreation.creationDiv.innerHTML = '' ;
+    projCreation.name.value = '' ;
+}
 
 
 
-
-
-
-export{
-    projectListener,
+export {
+    projectListener
 }

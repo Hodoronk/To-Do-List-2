@@ -3,9 +3,9 @@ import { Task } from "./taskClass";
 import {taskArray} from "./utility" ;
 
 let prio;
-const addTask = () => {
+const addTask = (array) => {
     mainDivs.center.innerHTML = '';
-    forEach((task, index) => {
+    array.forEach((task, index) => {
         const taskIndex = index;
         displayTask(task.title, task.description, task.dueDate, task.priority, taskIndex) ;
     });
@@ -73,7 +73,6 @@ const createButton = () => {
     const newTask = new Task(title, descr, due, priority);
     taskArray.push(newTask) ; //new tasks get pushed into task array here
     const taskIndex = taskArray.length - 1;
-    console.log(taskArray.length);
 
     mainDivs.center.removeChild (inputField.container) ;
 

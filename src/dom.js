@@ -1,12 +1,13 @@
 import { btnMaker, divMaker, paraMaker, inputMaker } from "./utility"
 
 const mainButtons = {
-    home: btnMaker ('Home') ,
-    week: btnMaker ('This Week') ,
-    today: btnMaker ('Today') ,
-    addTask: btnMaker ('Add Task') ,
-    projects: paraMaker ('Projects') , //Not btn, but fits.
-    newProj: btnMaker ('+ Project'),
+    home: btnMaker ( 'Home' ) ,
+    week: btnMaker ( 'This Week' ) ,
+    today: btnMaker ( 'Today' ) ,
+    addTask: btnMaker ( 'Add Task' ) ,
+    projects: paraMaker ( 'Projects' ) ,
+    addProject: btnMaker ( 'Create Project' ) ,
+    
 }
 
 const mainDivs = {
@@ -47,14 +48,17 @@ const taskElements = {
 }
 
 const projCreation = {
+    createProj: btnMaker('New project') ,
     namePara: paraMaker('Name your project: ') ,
     name : inputMaker('text') ,
     plusBtn: btnMaker('+') ,
     projCancel: btnMaker ('Cancel') ,
+    creationDiv: divMaker(),
 }
 
 const projectCenterDisplay = {
     h1 : document.createElement('h1'),
+    addTask: btnMaker('Add Task'),
 }
 
 
