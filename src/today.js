@@ -1,41 +1,27 @@
-import { mainDivs } from "./dom";
-import { taskArray } from "./utility" ;
-import { displayTask } from "./addTask";
+import { mainKeeper, Keeper, Projects, defaultProject,  } from "./keeper"
+import { Task } from "./task"
+const todayArray = [] ;
+export const todayHandler = () => {
+    mainKeeper.projectsArray.forEach((project, index) => {
 
-
-
-const todayChecker = () => {
-    mainDivs.center.innerHTML = '' ;
-    taskArray.forEach((task , index ) => {
-        const taskIndex = index;
-        const dateFormat = new Date(task.dueDate) ;
-        if(isToday(dateFormat)){
-
-            displayTask(task.title, task.description, task.dueDate, task.priority, taskIndex) ;
-
-        }
+    const today = new Date() ;
+    project.pTaskArray.forEach((task, index) => {
+        const theDate = new Date(task.getDue()) ;
+        if (
+            theDate.getDate() === today.getDate() &&
+            theDate.getMonth() === today.getMonth() &&
+            theDate.getFullYear() === today.getFullYear()
+          ){
+            todayArray.push(task) ;
+          }
+          console.log(`Task Title : ${task.title}`) ;
+          console.log(`Task Description : ${task.description}`) ;
+          console.log(`Task Due: ${task.getDue()}`) ;
+          console.log(`Task Priority: ${task.priority}`) ;
+          console.log(`Task Project: ${project.name}`) ;
     })
-}
+})
 
 
 
-
-const isToday = (date) => {
-    const today = new Date();
-    return (
-        date.getDate() === today.getDate() &&
-        date.getMonth() === today.getMonth() &&
-        date.getFullYear() === today.getFullYear()
-    );
-}
-
-
-
-
-
-
-
-
-export {
-    todayChecker,
 }
