@@ -7,7 +7,7 @@ import { Task } from "./task";
 class Keeper{
     constructor(){
         this.taskArray = [];
-        this.projectsArray = [] ;
+        this.projectsArray = [defaultProj] ;
 
     }
     takeTask(task, project){
@@ -32,9 +32,6 @@ class Keeper{
             projectButton.addEventListener('click', () => {
                 mainDivs.taskDisplay.innerHTML = '' ;
                 project.populate();
-
-
-
             })
         })
     }
@@ -77,6 +74,10 @@ export class Project{
 
         this.pTaskArray.forEach((task, index) => {
             const doDiv = document.createElement('div') ;
+            doDiv.setAttribute('id', 'dolist-div');
+
+
+
             const doTitle = document.createElement('h4') ;
             doTitle.textContent = task.title;
             const doDesc = document.createElement('p') ;
@@ -87,10 +88,18 @@ export class Project{
             doPriority.textContent = task.priority ;
             const doProject = document.createElement('p') ;
             doProject.textContent = `Project: ${this.name}` ;
+
+
+            
             const deleteTask = document.createElement('button') ;
             deleteTask.textContent = 'Delete Task' ;
             const completeTask = document.createElement('button') ;
             completeTask.textContent = 'Mark Complete' ;
+
+
+            const buttDiv = document.createElement('div') ;
+            buttDiv.appendChild (deleteTask) ;
+            buttDiv.appendChild (completeTask) ;
 
             deleteTask.addEventListener('click', () => {
                 doDiv.innerHTML = '' ;
@@ -107,8 +116,7 @@ export class Project{
             doDiv.appendChild ( doDue ) ;
             doDiv.appendChild ( doPriority ) ;
             doDiv.appendChild ( doProject ) ;
-            doDiv.appendChild ( deleteTask ) ;
-            doDiv.appendChild ( completeTask ) ;
+            doDiv.appendChild ( buttDiv )
     
             mainDivs.taskDisplay.appendChild(doDiv) ;
     
@@ -121,7 +129,106 @@ export class Project{
 
 
 
-export const defaultProj = new Project() ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const defaultProj = new Project('No project') ;
 
 
 export const mainKeeper = new Keeper;
+
+
+

@@ -4,7 +4,7 @@ import { mainKeeper, Project, defaultProj } from "./keeper";
 import { buttons } from "./dom";
 
 
-export let selectedP;
+export let selectedP = defaultProj;
 let priority;
 
 export const createTaskForm = () => {
@@ -80,15 +80,17 @@ export const createTaskForm = () => {
     const projectSelection = document.createElement('div') ;
     mainKeeper.loopTaskCreation(projectSelection) ;
 
-   
-
 
     const submitTask = document.createElement('button') ;
     submitTask.type = 'submit';
     submitTask.textContent = 'Submit' ;
     submitTask.addEventListener('click', () => {
+
         createTask(taskTitle.value , taskDescr.value, taskDue.value, priority, selectedP) ;
+        console.log(`SELECTED P : ${selectedP.name}`) ;
+        console.log(`TASK DUE VALUE : ${taskDue.value}`) ;
         erase(mainDivs.mainScreen, formField, taskTitle, taskDescr, taskDue, taskPrio1, taskPrio2, taskPrio3)
+    
     });
 
     const cancelTask = document.createElement('button') ;

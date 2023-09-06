@@ -123,3 +123,33 @@ button{
     flex-direction: column;
 
 }
+
+
+
+#dolist-div{
+    border: 1px solid black;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height:fit-content;
+    padding:10px;
+    margin: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 15px 10px 20px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 15px 10px 20px 0px rgba(0,0,0,0.75);
+box-shadow: 15px 10px 20px 0px rgba(0,0,0,0.75);    
+}
+
+#task-display{
+    display:flex;
+    flex-direction:row;
+
+}
+
+#task-buttons-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

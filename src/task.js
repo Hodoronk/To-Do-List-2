@@ -10,5 +10,8 @@ export class Task{
     getProject(){
         return this.project.value;
     }
+    getDue(){
+        return this.dueDate;
+    }
     
 }
