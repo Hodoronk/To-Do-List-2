@@ -122,37 +122,8 @@ export const createTaskForm = () => {
 
 
     const createTask = (title, description, due, priority, selected) => {
-        const newTask = new Task(title, description, due, priority) ;
+        const newTask = new Task(title, description, due, priority, selected) ;
         mainKeeper.takeTask(newTask, selected) ;
-
-        const doDiv = document.createElement('div') ;
-        const doTitle = document.createElement('h4') ;
-        doTitle.textContent = title;
-        const doDesc = document.createElement('p') ;
-        doDesc.textContent = `Description: ${description}`;
-        const doDue = document.createElement('p') ;
-        doDue.textContent = `Due date: ${due}` ;
-        const doPriority = document.createElement('p') ;
-        doPriority.textContent = priority ;
-        const doProject = document.createElement('p') ;
-        doProject.textContent = `Project: ${selected.name}` ;
-
-        
-        doDiv.appendChild( doTitle ) ;
-        doDiv.appendChild( doDesc ) ;
-        doDiv.appendChild( doDue ) ;
-        doDiv.appendChild( doPriority ) ;
-        doDiv.appendChild ( doProject ) ;
-
-        mainDivs.mainScreen.appendChild(doDiv) ;
-
-
-
-
-
-
-
-
 
 
     }
