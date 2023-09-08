@@ -1,7 +1,7 @@
 
 import { mainDivs } from "./dom";
 import { selectedP } from "./functions";
-import { Task } from "./task";
+
 
 
 class Keeper{
@@ -52,13 +52,6 @@ class Keeper{
         })
 
     }
-
-    listAllTasks(){
-        mainDivs.taskDisplay.innerHTML = '' ;
-        this.projectsArray.forEach((project , index) => {
-            project.populate();
-        })
-    }
 }
 
 
@@ -70,59 +63,7 @@ export class Project{
     pushToArray(task){
         this.pTaskArray.push(task) ;
     }
-    populate(){
 
-        this.pTaskArray.forEach((task, index) => {
-            const doDiv = document.createElement('div') ;
-            doDiv.setAttribute('id', 'dolist-div');
-
-
-
-            const doTitle = document.createElement('h4') ;
-            doTitle.textContent = task.title;
-            const doDesc = document.createElement('p') ;
-            doDesc.textContent = `Description: ${task.description}`;
-            const doDue = document.createElement('p') ;
-            doDue.textContent = `Due date: ${task.due}` ;
-            const doPriority = document.createElement('p') ;
-            doPriority.textContent = task.priority ;
-            const doProject = document.createElement('p') ;
-            doProject.textContent = `Project: ${this.name}` ;
-
-
-            
-            const deleteTask = document.createElement('button') ;
-            deleteTask.textContent = 'Delete Task' ;
-            const completeTask = document.createElement('button') ;
-            completeTask.textContent = 'Mark Complete' ;
-
-
-            const buttDiv = document.createElement('div') ;
-            buttDiv.appendChild (deleteTask) ;
-            buttDiv.appendChild (completeTask) ;
-
-            deleteTask.addEventListener('click', () => {
-                doDiv.innerHTML = '' ;
-                //remove from array
-            }) ;
-
-            completeTask.addEventListener ( 'click' , () => {
-                doDiv.innerHTML = '' ;
-                //remove from array
-            } )
-    
-            doDiv.appendChild ( doTitle ) ;
-            doDiv.appendChild ( doDesc ) ;
-            doDiv.appendChild ( doDue ) ;
-            doDiv.appendChild ( doPriority ) ;
-            doDiv.appendChild ( doProject ) ;
-            doDiv.appendChild ( buttDiv )
-    
-            mainDivs.taskDisplay.appendChild(doDiv) ;
-    
-        })
-
-    }
 }
 
 
