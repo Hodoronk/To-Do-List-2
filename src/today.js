@@ -11,9 +11,9 @@ import isThisYear from "date-fns/isThisYear";
 export const todayHandler = () => {
     mainDivs.taskDisplay.innerHTML = '' ;
     mainKeeper.projectsArray.forEach((project, index) => {
-    const taskIndex = index;
-    const today = new Date() ;
-    project.pTaskArray.forEach((task, index) => {
+        const today = new Date() ;
+        project.pTaskArray.forEach((task, index) => {
+        const taskIndex = index;
         const theDate = new Date(task.getDue()) ;
         if (isToday(theDate)){
             taskDisplayer(task, project, taskIndex);
@@ -25,8 +25,8 @@ export const todayHandler = () => {
 export const weekHandler = () => {
     mainDivs.taskDisplay.innerHTML = '' ;
     mainKeeper.projectsArray.forEach((project, index) => {
-        const taskIndex = index;
         project.pTaskArray.forEach((task, index) => {
+            const taskIndex = index;
             const theDate = new Date(task.getDue()) ;
 
             if(isThisWeek(theDate)){
@@ -39,8 +39,8 @@ export const weekHandler = () => {
 export const monthHandler = () => {
     mainDivs.taskDisplay.innerHTML = '' ;
     mainKeeper.projectsArray.forEach((project, index) => {
-        const taskIndex = index;
         project.pTaskArray.forEach((task, index) => {
+            const taskIndex = index;
             const theDate = new Date(task.getDue()) ;
             if(isThisMonth(theDate)){
                 taskDisplayer (task, project, taskIndex) ;
@@ -52,8 +52,8 @@ export const monthHandler = () => {
 export const yearHandler = () => {
     mainDivs.taskDisplay.innerHTML = '' ;
     mainKeeper.projectsArray.forEach((project, index) => {
-        const taskIndex = index;
         project.pTaskArray.forEach((task, index) => {
+            const taskIndex = index;
             const theDate = new Date(task.getDue()) ;
         
             if(isThisYear(theDate)){
@@ -66,8 +66,8 @@ export const yearHandler = () => {
 export const allTimeHandler = () => {
     mainDivs.taskDisplay.innerHTML = '' ;
     mainKeeper.projectsArray.forEach((project, index) => {
-        const taskIndex = index;
         project.pTaskArray.forEach((task, index) => {
+            const taskIndex = index;
 
                 taskDisplayer (task, project, taskIndex) ;
         })
@@ -76,29 +76,7 @@ export const allTimeHandler = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const taskDisplayer = (task, project, index) => {
+export const taskDisplayer = (task, project, index) => {
 
 
     const doDiv = document.createElement('div') ;
@@ -133,10 +111,6 @@ const taskDisplayer = (task, project, index) => {
 
     } )
 
-
-
-
-
     doDiv.appendChild ( doTitle ) ;
     doDiv.appendChild ( doDesc ) ;
     doDiv.appendChild ( doDue ) ;
@@ -145,5 +119,3 @@ const taskDisplayer = (task, project, index) => {
     doDiv.appendChild ( buttDiv )
     mainDivs.taskDisplay.appendChild(doDiv) ;
 }
-
-

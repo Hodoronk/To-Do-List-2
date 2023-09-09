@@ -1,4 +1,4 @@
-
+import { taskDisplayer } from "./today";
 import { mainDivs } from "./dom";
 import { selectedP } from "./functions";
 
@@ -17,24 +17,28 @@ class Keeper{
     takeProject(project){
         this.projectsArray.push (project) ;
         console.log(this.projectsArray) ;
-        console.log(`takeProject projects : ${this.projectsArray}`)
     }
 
-    loopThroughProjects(){
+    loopThroughProjects() {
         const pList = document.getElementById('project-list') ;
         pList.innerHTML = '' ;
 
         this.projectsArray.forEach((project, index) => {
-            const projectButton = document.createElement('button');
-            projectButton.textContent = project.name ;
-            pList.appendChild(projectButton) ;
+            const projectButton = document.createElement('button') ;
+            projectButton.textContent = project.name;
+            const theProject = project;
 
+            pList.appendChild(projectButton) ;
             projectButton.addEventListener('click', () => {
                 mainDivs.taskDisplay.innerHTML = '' ;
-                project.populate();
+                project.pTaskArray.forEach((task, index) => {
+                    taskDisplayer(task, theProject, index) ;
+                })
             })
         })
     }
+
+    
 
     loopTaskCreation(div){
 

@@ -70,11 +70,6 @@ export const createTaskForm = () => {
     priorityDiv.appendChild(taskPrio2);
     priorityDiv.appendChild(taskPrio3);
 
-
-
-
-
-
     const selectProjectP = document.createElement('p') ;
     selectProjectP.textContent = 'Select Project: ' ;
     const projectSelection = document.createElement('div') ;
