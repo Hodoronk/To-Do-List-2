@@ -1,6 +1,6 @@
 # To-Do-List-2
 
-To Do List app part of [The Odin Project]('https://www.theodinproject.com/') curriculum. This Task Manager Application is designed to help users organize their tasks and projects efficiently.
+To Do List app part of [The Odin Project](https://www.theodinproject.com/) curriculum. This Task Manager Application is designed to help users organize their tasks and projects efficiently.
 It enables the creation of tasks, projects, and provides functionality to sort and manage them based on different timeframes.
 
 ## Features
