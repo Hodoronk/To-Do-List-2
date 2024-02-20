@@ -4,7 +4,7 @@ import isThisYear from 'date-fns/isThisYear';
 import { mainKeeper, Keeper, Projects, defaultProject } from './keeper';
 import { mainDivs } from './dom';
 import isThisWeek from 'date-fns/isThisWeek';
-import completeImage from './assets/archive.svg' 
+
 
 
 export const todayHandler = () => {

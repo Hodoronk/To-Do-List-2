@@ -145,12 +145,12 @@ button {
 
 @font-face {
     font-family: 'Roboto';
-    src: url('../src/assets/fonts/Roboto-Regular.ttf');
+    src: url('../dist/assets/fonts/Roboto-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Cookie';
-    src: url('../src/assets/fonts/Cookie/Cookie-Regular.ttf');
+    src: url('../dist/assets/fonts/Cookie/Cookie-Regular.ttf');
 }
 
 /* Form divs */
