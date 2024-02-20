@@ -4,31 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>To DO list</title>
 </head>
 <body>
-    <header><h1 id = 'website-title'>To Do List</h1></header>
+    <header>
+        <button id='mobile-sidebar-reveal'><img src="../src/assets/Bars3.svg" alt=""></button>
+        <div id="title">
+            <img src="../src/assets/check-square.svg" alt="">
+            <h1>Task Keeper</h1>
+        </div>
+    </header>
     <div id="content">
         <div id="sidebar">
-            <button id="add-task">Add Task</button>
-            <h2 id="your-projects">Your projects</h2>
-            <div id ='project-div'>
-                <button id="add-project">+</button>
+            <div id="time-buttons">
+                <button id="today"><img src="../src/assets/clock.svg" alt="">Today</button>
+                <button id="week"><img src="../src/assets/calendar-2-fill.svg" alt="">Week</button>
+                <button id="month"><img src="../src/assets/CalendarDays.svg" alt="">Month</button>
+                <button id="year"><img src="../src/assets/calendar-fill.svg" alt="">Year</button>
+                <button id="all-time"><img src="../src/assets/archive.svg" alt="">All time</button>
             </div>
+            <h2 id="your-projects">Your projects</h2>
             <div id="project-list">
                 
             </div>
+            <div id ='project-div'>
+                <button class="add-btn" id ='add-project'><img src="/src/assets/Plus.svg" alt="new project"></button>
+            </div>
         </div>
 
+        
         <div id="main-screen">
-            <div id="time-buttons">
-                <button id="today">Today</button>
-                <button id="week">Week</button>
-                <button id="month">Month</button>
-                <button id="year">Year</button>
-                <button id="all-time">All time</button>
+            <div id="taskinput-area">
+                <button class="add-btn" id="add-task">New task</button>
             </div>
+            
+            
             <div id="task-display">
+                <h2>Tasks</h2>
                 
             </div>
         </div>
